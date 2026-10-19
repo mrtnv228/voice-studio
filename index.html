@@ -1,0 +1,82 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Вокальная студия Голос в Санкт-Петербурге.">
+    <title>Вокальная студия «Голос»</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #fdfaf6; color: #4a3e3d; line-height: 1.6; }
+        header { position: fixed; top: 0; left: 0; width: 100%; background-color: #4a3e3d; padding: 15px 5%; display: flex; justify-content: space-between; z-index: 1000; }
+        .logo { color: #d4a373; font-size: 24px; font-weight: bold; }
+        nav a { color: #f5ebe0; text-decoration: none; margin-left: 20px; }
+        section { padding: 100px 5% 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .hero { background: #3d3130; height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; }
+        .btn { display: inline-block; background-color: #d4a373; color: #3d3130; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
+        .service-card { background-color: #fff; padding: 30px; border-radius: 10px; border-top: 4px solid #d4a373; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .promo-container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+        .promo-block { flex: 1; min-width: 300px; background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .contact-form { background-color: #f5ebe0; padding: 30px; border-radius: 10px; margin-top: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #4a3e3d; border-radius: 5px; }
+        .form-btn { width: 100%; background-color: #3d3130; color: #fff; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .success-message { display: none; background-color: #d4a373; color: #3d3130; padding: 15px; border-radius: 5px; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Голос</div>
+        <nav><a href="#about">О нас</a><a href="#services">Направления</a><a href="#promo">Акции</a><a href="#contacts">Контакты</a></nav>
+    </header>
+    <div class="hero">
+        <h1>Раскрой силу своего голоса</h1>
+        <p>Обучение вокалу для взрослых и детей в Санкт-Петербурге с нуля!</p>
+        <a href="#contacts" class="btn">Записаться на урок</a>
+    </div>
+    <section id="about">
+        <h2>Наша история</h2>
+        <p>Вокальная студия «Голос» основана профессиональными музыкантами. Мы учим петь каждого!</p>
+    </section>
+    <section id="services">
+        <h2>Наши направления</h2>
+        <div class="services-grid">
+            <div class="service-card"><h3>Эстрадный вокал</h3><p>Современные техники пения и работа с микрофоном.</p></div>
+            <div class="service-card"><h3>Академический вокал</h3><p>Постановка классического оперного голоса.</p></div>
+            <div class="service-card"><h3>Рок-вокал</h3><p>Освоение экстремальных техник без вреда для связок.</p></div>
+            <div class="service-card"><h3>Вокал для детей</h3><p>Игровая методика обучения для малышей от 5 лет.</p></div>
+            <div class="service-card"><h3>Постановка дыхания</h3><p>Курс по управлению опорой звука и снятию зажимов.</p></div>
+            <div class="service-card"><h3>Подготовка к выступлениям</h3><p>Подготовим вас к караоке, кастингу или концерту.</p></div>
+        </div>
+    </section>
+    <section id="promo">
+        <h2>Специальные предложения</h2>
+        <div class="promo-container">
+            <div class="promo-block"><h3>🔥 Акции</h3><p>Скидка 15% на первый абонемент!</p></div>
+            <div class="promo
+            k"><h3>✨ Бонусы</h3><p>Приведи друга — получи урок в подарок.</p></div>
+        </div>
+    </section>
+    <section id="contacts">
+        <h2>Запись на бесплатный урок</h2>
+        <div class="contact-form">
+            <form id="demoForm">
+                <div class="form-group"><input type="text" placeholder="Ваше имя" required></div>
+                <div class="form-group"><input type="tel" placeholder="Номер телефона" required></div>
+                <button type="submit" class="form-btn">Отправить заявку</button>
+            </form>
+            <div id="successMsg" class="success-message">Спасибо! Демонстрационная заявка на вокал успешно принята.</div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('demoForm').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
